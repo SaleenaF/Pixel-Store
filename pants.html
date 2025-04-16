@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pants - Pixel Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cloud Decorations -->
+    <img src="images/cloud.png" class="cloud-decoration cloud-top-right" alt="Decorative cloud">
+    <img src="images/cloud.png" class="cloud-decoration cloud-bottom-left" alt="Decorative cloud">
+    <header>
+        <nav>
+            <h1>Pixel Shop</h1>
+            <div class="nav-buttons">
+                <button class="white-button" id="loginBtn">Login</button>
+                <button class="white-button" id="registerBtn">Register</button>
+                <div class="cart-button-container">
+                    <button class="cart-button" id="cartBtn">
+                        <img src="images/cart.png" alt="Cart">
+                    </button>
+                    <span id="cartCount">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <h2 class="welcome-title">Pants Collection</h2>
+        <div class="products-container" id="productsContainer">
+            <!-- Products will be loaded dynamically by script.js -->
+        </div>
+    </main>
+    
+    <!-- Include the same modals as index.html -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-box">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-box">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="address" placeholder="Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-button">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-box">
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <div id="cartTotal">Subtotal: $0.00</div>
+            <!-- Tax and Grand Total will be inserted here by JavaScript -->
+            <button id="checkoutBtn" class="auth-button">Checkout</button>
+        </div>
+    </div>
+    
+    <footer>
+        <img src="images/footer.png" alt="Cute pixel cat in clouds">
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

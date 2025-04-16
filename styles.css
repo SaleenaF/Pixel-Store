@@ -1,0 +1,517 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Base Styles */
+html {
+    font-size: 12px;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Press Start 2P", cursive;
+    font-size: inherit;
+}
+
+body {
+    background-color: #C0E0FD;
+    color: #4a90e2;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    zoom: 1;
+    transform: scale(1);
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Disable pinch zoom */
+@viewport {
+    width: device-width;
+    zoom: 1;
+    min-zoom: 1;
+    max-zoom: 1;
+    user-zoom: fixed;
+}
+
+/* Typography */
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1.33rem; }
+h3 { font-size: 1.16rem; margin-bottom: 1rem; }
+p, button, input { font-size: 1rem; }
+
+/* Product price spacing */
+.product p {
+    margin: 0.5rem 0 1rem;
+}
+
+/* Add these new styles to your existing styles.css */
+
+/* Cloud decorations */
+.cloud-decoration {
+  position: absolute;
+  z-index: 1;
+  image-rendering: pixelated;
+  pointer-events: none; /* Makes it non-interactive */
+}
+
+.cloud-top-right {
+  top: 10rem; /* Lowered from 5rem */
+  right: 0;
+  transform: translateX(30%); /* Reduced from 50% */
+  width: 18rem; /* Increased from 12rem */
+}
+
+.cloud-bottom-left {
+  bottom: 18rem; /* Increased from 16rem */
+  left: 0;
+  transform: translateX(-30%); /* Reduced from 50% */
+  width: 20rem; /* Increased from 15rem */
+}
+
+/* Add position relative to body to contain absolute positioned clouds */
+body {
+  position: relative;
+  /* ... your existing body styles ... */
+}
+
+/* Ensure main content stays above clouds */
+main {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    width: 100%;
+    padding-bottom: 0;
+}
+
+/* Header & Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.83rem 1.66rem;
+    height: 5rem;
+    background-color: white;
+    border-bottom: 3px solid #76B8EC;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 0.83rem;
+    align-items: center;
+    position: relative;
+}
+
+/* Cart Button */
+.cart-button-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-button {
+    background-color: white;
+    border: 3px solid #76B8EC;
+    padding: 0.66rem;
+    cursor: pointer;
+    border-radius: 0.83rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-button img {
+    width: 2rem;
+    height: 2rem;
+}
+
+#cartCount {
+    position: absolute;
+    top: -0.66rem;
+    right: -0.66rem;
+    background-color: #FF5252;
+    color: white;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+}
+
+/* Button Styles */
+.white-button,
+.add-to-cart,
+.auth-button,
+#checkoutBtn {
+    background-color: white;
+    border: 3px solid #76B8EC;
+    padding: 0.66rem 1rem;
+    cursor: pointer;
+    border-radius: 0.83rem;
+    color: #4a90e2;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.white-button:hover,
+.add-to-cart:hover,
+.auth-button:hover,
+#checkoutBtn:hover {
+    background-color: #76B8EC;
+    color: white;
+}
+
+/* Common Container Styles */
+.products-container,
+.category-scroll {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.66rem;
+    padding: 1.66rem;
+    max-width: 83.33rem;
+    margin: 0 auto;
+}
+
+.icon-box {
+    width: 16rem; /* Increased from 13.33rem */
+    min-height: 24rem; /* Increased from 22rem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 4px solid #76B8EC;
+    border-radius: 1.25rem;
+    padding: 1.5rem; /* Increased padding on all sides */
+    transition: transform 0.3s;
+}
+
+/* Image Styles for index page icons */
+.icon-box img {
+    width: 14rem; /* Maintain size but now fits better */
+    height: 14rem;
+    object-fit: contain;
+    margin-bottom: 1rem; /* Increased spacing */
+    image-rendering: pixelated;
+}
+
+/* Keep product boxes (on shirts page) with original styling */
+.product {
+    width: 13.33rem;
+    min-height: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 4px solid #76B8EC;
+    border-radius: 1.25rem;
+    padding: 1rem;
+    transition: transform 0.3s;
+}
+
+.product:hover,
+.icon-box:hover {
+    transform: scale(1.03);
+}
+
+/* Image Styles */
+.icon-box img {
+    width: 14rem; /* Slightly reduced to fit better with new padding */
+    height: 14rem;
+    object-fit: contain;
+    margin-bottom: 0.66rem;
+    image-rendering: pixelated;
+}
+
+.product img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+    margin-bottom: 0.66rem;
+    image-rendering: pixelated;
+}
+
+/* Title Styles */
+.welcome-title {
+    background-color: #76B8EC;
+    color: white;
+    width: 100%;
+    padding: 1.25rem 0;
+    margin-bottom: 1.25rem;
+}
+
+/* Footer Styles */
+footer {
+    padding: 0;
+    background-color: #C0E0FD;
+    width: 100%;
+    margin: 0;
+    margin-top: auto;
+}
+
+footer img {
+    height: 16rem;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Cart Pricing Styles */
+#cartTotal {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+#cartTax {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+#cartGrandTotal {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0 1.5rem;
+    border-top: 2px solid #76B8EC;
+    padding-top: 0.5rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    overflow: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+}
+
+.modal-box {
+    background-color: white;
+    border: 4px solid #76B8EC;
+    border-radius: 1.25rem;
+    padding: 1.66rem;
+    width: 90%;
+    max-width: 29.16rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Cart Items Scrollable Area */
+#cartItems {
+    max-height: 40vh;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+/* Cart Item Styling */
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 2px solid #76B8EC;
+    position: relative;
+}
+
+.cart-item img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    margin-right: 1rem;
+}
+
+.cart-item > div {
+    flex: 1;
+    text-align: left;
+    padding-right: 2rem;
+}
+
+.cart-item h4 {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.cart-item p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.cart-item span {
+    font-size: 0.9rem;
+    margin: 0 1rem;
+}
+
+/* Remove Item Button - Adjusted position */
+.remove-item {
+    position: absolute;
+    right: 0;
+    top: 0.5rem; /* Moved higher */
+    color: #aaa;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0 0.5rem;
+    line-height: 1;
+}
+
+.remove-item:hover {
+    color: #76B8EC;
+}
+
+/* Modal Content Spacing */
+.modal-box h2 {
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.modal p {
+    margin: 1.5rem 0 0.5rem;
+}
+
+.modal a {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+/* Small screens */
+@media (max-height: 600px) {
+    .modal-box {
+        top: 1rem;
+        transform: translate(-50%, 0);
+        max-height: 90vh;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 0.83rem;
+    right: 1.25rem;
+    color: #aaa;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.close:hover {
+    color: #76B8EC;
+}
+
+/* Form Styles */
+.form-group input {
+    width: 100%;
+    padding: 0.66rem;
+    border: 3px solid #76B8EC;
+    border-radius: 0.66rem;
+}
+
+.modal a {
+    color: #76B8EC;
+    text-decoration: none;
+}
+
+.modal a:hover {
+    text-decoration: underline;
+}
+
+/* Cart Feedback */
+.cart-feedback {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #76B8EC;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    z-index: 1001;
+    animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+    from { bottom: -3rem; opacity: 0; }
+    to { bottom: 2rem; opacity: 1; }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+
+/* Orders Page Styles */
+.orders-container, 
+.admin-orders-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.order {
+    background-color: white;
+    border: 4px solid #76B8EC;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.order h3 {
+    margin-bottom: 0.5rem;
+    color: #4a90e2;
+}
+
+.order p {
+    margin: 0.5rem 0;
+}
+
+.order-items {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px dashed #76B8EC;
+}
+
+.order-item {
+    margin-bottom: 0.5rem;
+}
+
+.mark-delivered {
+    margin-top: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.mark-delivered:hover {
+    background-color: #45a049;
+}
